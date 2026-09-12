@@ -24,9 +24,7 @@ export default function ModalChooseTier({ open, onClose }) {
       </div>
 
       <p className="mt-2 text-[14px] leading-[1.4] text-[var(--color-text-secondary)]">
-        Your tier is based on your wallet activity and salary history. Higher tiers unlock as you
-        build a repayment track record with NovaPay.
-      </p>
+      Your offered limit is determined by your current risk assessment and repayment history. You can choose any available tier up to your maximum approved limit. Taking a lower amount helps keep your total repayment low, while consistent on-time repayments can unlock higher tiers for future advances.      </p>
 
       <ul className="mt-4 space-y-3">
         {TIER_INFO.map((tier) => (
