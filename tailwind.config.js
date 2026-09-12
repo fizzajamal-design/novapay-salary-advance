@@ -34,6 +34,11 @@ export default {
           900: "#1A1A1A",
         },
         success: "#1E9E5A",
+        // Danger — DESIGN.md Tier 1 ref-danger-95 / ref-danger-50 (decline & alert states).
+        danger: {
+          surface: "#FEF2F2",
+          DEFAULT: "#EF4444",
+        },
       },
       borderRadius: {
         sm: "8px",
