@@ -9,7 +9,7 @@ const BULLETS = [
   "Automatic repayment on payday, so you don’t have to worry about deadlines!"
 ];
 
-export default function HowItWorks({ onClose, onApply }) {
+export default function HowItWorks({ onClose, onApply, onFaq = () => {} }) {
   return (
     <div className="flex flex-col h-full bg-[var(--color-bg-app)]">
       <AppBar onClose={onClose} title= "NovaPay Salary Advance" />
@@ -39,6 +39,13 @@ export default function HowItWorks({ onClose, onApply }) {
             </li>
           ))}
         </ol>
+
+        <p className="mt-4 flex flex-wrap items-center gap-1 text-[14px] leading-[1.4] text-[var(--color-text-secondary)]">
+          Have more questions?
+          <Button variant="link" onClick={onFaq}>
+            See our FAQs
+          </Button>
+        </p>
 
         <div className="mt-auto pt-8">
           <Button variant="primary" size="l" onClick={onApply}>

@@ -53,18 +53,6 @@ export default function AdvanceOptions({
             onLockedTap={() => setActiveModal("locked")}
           />
 
-          <div className="flex items-center gap-1 text-[12px] leading-[1.3] font-medium text-[var(--color-text-secondary)]">
-            <span>Rs 15,000 locked</span>
-            <button
-              type="button"
-              aria-label="Why Rs 15,000 is locked"
-              onClick={() => setActiveModal("locked")}
-              className="h-11 w-11 -my-3 -ml-2 flex items-center justify-center text-[var(--color-text-secondary)]"
-            >
-              <Icon name="info" size={16} />
-            </button>
-          </div>
-
           <div className="rounded-[var(--radius-m)] bg-[var(--color-bg-surface-subtle)] p-3 space-y-2">
             <div className="flex justify-between text-[14px] leading-[1.4]">
               <span className="text-[var(--color-text-secondary)]">Advance amount</span>
@@ -98,7 +86,7 @@ export default function AdvanceOptions({
                   : "bg-[var(--color-bg-surface)] border-[var(--color-border-neutral-primary)]",
               ].join(" ")}
             >
-              {acceptedTerms ? <Icon name="checkCircle" size={14} /> : null}
+              {acceptedTerms ? <Icon name="check" size={14} /> : null}
             </span>
             <input
               type="checkbox"

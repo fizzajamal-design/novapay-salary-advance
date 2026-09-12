@@ -17,7 +17,7 @@ export default function SuccessState({ onClose, onReturn }) {
 
         <div className="mt-6 flex items-start gap-2">
           <span className="mt-0.5 text-[var(--color-text-success-surface)]">
-            <Icon name="checkCircle" size={28} />
+            <Icon name="check" size={28} />
           </span>
           <h1 className="text-[24px] leading-[1.3] font-bold text-[var(--color-text-primary)]">
             Advance approved

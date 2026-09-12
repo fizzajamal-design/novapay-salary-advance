@@ -279,7 +279,7 @@ Used for the paired alternate action next to a Primary button (e.g. "Not Now", "
 
 Lowest-emphasis inline action — no fill, no border, no fixed touch-target box. Used for tertiary navigation and non-critical actions (e.g. "Skip for now", "View all transactions", "Learn how fees work").
 
-- **Default:** No background, `--color-text-brand` text, `font-weight: 600` (Body Large / Body Regular scale depending on `size`)
+- **Default:** No background, `--color-text-brand` text, `font-weight: 400` (Body Regular / Body Regular scale depending on `size`)
 - **Underline:** `hover`/`focus` by default (`text-decoration: underline`) to keep it visually distinct from static labels; `always` for links inline within a paragraph of body copy
 - **Active / Pressed:** `--brand-primary-hover` text color (`--ref-blue-50`)
 - **Disabled:** `--color-text-secondary` color, no underline, `cursor: not-allowed`

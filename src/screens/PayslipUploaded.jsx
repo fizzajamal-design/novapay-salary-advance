@@ -1,7 +1,7 @@
 import { AppBar, Button } from "../novakit";
-import uploadState from "../assets/illustrations/upload_state.png";
+import uploadState from "../assets/illustrations/Banknote-bro.png";
 
-export default function PayslipUploaded({ onClose, onNotify }) {
+export default function PayslipUploaded({ onClose, onNotify, onFaq = () => {} }) {
   return (
     <div className="flex flex-col h-full bg-[var(--color-bg-app)]">
       <AppBar onClose={onClose} />
@@ -16,8 +16,14 @@ export default function PayslipUploaded({ onClose, onNotify }) {
         </h1>
 
         <p className="mt-3 text-[14px] leading-[1.4] text-[var(--color-text-secondary)]">
-          We’re reviewing your payslip now. This usually takes less than a business day — we’ll
-          let you know the moment your eligibility is confirmed.
+        We are working on getting you approved. Check back tomorrow to see if you’re eligible.
+        </p>
+
+        <p className="mt-4 flex flex-wrap items-center gap-1 text-[14px] leading-[1.4] text-[var(--color-text-secondary)]">
+          Have more questions?
+          <Button variant="link" onClick={onFaq}>
+            See our FAQs
+          </Button>
         </p>
 
         <div className="mt-auto pt-8">

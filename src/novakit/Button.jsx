@@ -29,12 +29,12 @@ export default function Button({
   const isDisabled = disabled || loading;
 
   const base = isLink
-    ? "inline-flex items-center justify-center gap-1 rounded-[var(--radius-s)] font-semibold select-none min-h-11 px-1 py-2"
+    ? "inline-flex items-center justify-center gap-1 rounded-[var(--radius-s)] font-normal select-none min-h-11 px-1 py-2"
     : "inline-flex items-center justify-center gap-2 rounded-[var(--radius-m)] font-semibold select-none w-full active:scale-[0.98]";
 
   const sizes = {
-    m: isLink ? "text-[16px] leading-[1.5]" : "h-11 px-4 text-[16px] leading-[1.5] font-medium",
-    l: isLink ? "text-[16px] leading-[1.5]" : "h-[52px] px-5 text-[16px] leading-[1.5] font-medium",
+    m: isLink ? "text-[14px] leading-[1.4]" : "h-11 px-4 text-[16px] leading-[1.5] font-medium",
+    l: isLink ? "text-[14px] leading-[1.4]" : "h-[52px] px-5 text-[16px] leading-[1.5] font-medium",
   };
 
   const variants = {

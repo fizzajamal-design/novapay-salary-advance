@@ -30,7 +30,7 @@ export default function ModalChooseTier({ open, onClose }) {
         {TIER_INFO.map((tier) => (
           <li key={tier.amount} className="flex items-start gap-3">
             <span className="mt-0.5 text-[var(--color-text-brand)]">
-              <Icon name="checkCircle" size={18} />
+              <Icon name="check" size={18} />
             </span>
             <div>
               <div className="text-[16px] leading-[1.5] font-medium text-[var(--color-text-primary)]">
