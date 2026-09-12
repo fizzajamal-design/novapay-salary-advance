@@ -111,6 +111,7 @@ export default function App() {
         )}
         {step === STEPS.HOW_IT_WORKS && (
           <HowItWorks
+            onBack={() => goToStep(STEPS.DASHBOARD_ENTRY)}
             onClose={() => goToStep(STEPS.DASHBOARD_ENTRY)}
             onApply={() => goToStep(STEPS.ADVANCE_OPTIONS)}
           />
@@ -118,6 +119,7 @@ export default function App() {
         {step === STEPS.ADVANCE_OPTIONS && (
           <AdvanceOptions
             key={`${advanceOptionsConfig.tier}-${advanceOptionsConfig.modal}`}
+            onBack={() => goToStep(STEPS.HOW_IT_WORKS)}
             onClose={() => goToStep(STEPS.DASHBOARD_ENTRY)}
             initialTier={advanceOptionsConfig.tier}
             initialModal={advanceOptionsConfig.modal}

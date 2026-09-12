@@ -12,7 +12,7 @@ const BULLETS = [
 export default function HowItWorks({ onClose, onApply }) {
   return (
     <div className="flex flex-col h-full bg-[var(--color-bg-app)]">
-      <AppBar onClose={onClose} />
+      <AppBar onClose={onClose} title= "NovaPay Salary Advance" />
 
       <main className="flex-1 overflow-y-auto px-6 pt-4 pb-6 flex flex-col">
         <div className="flex justify-center">

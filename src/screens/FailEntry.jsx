@@ -3,8 +3,7 @@ import { AppBar, Button, Icon } from "../novakit";
 export default function FailEntry({ onClose, onReturn, onUploadPayslip }) {
   return (
     <div className="flex flex-col h-full bg-[var(--color-bg-app)]">
-      <AppBar onClose={onClose} />
-
+      <AppBar onClose={onClose} title= "NovaPay Salary Advance" />
       <main className="flex-1 overflow-y-auto px-6 pt-4 pb-6 flex flex-col">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--color-bg-danger-surface)] text-[var(--color-text-danger-surface)]">
           <Icon name="alertTriangle" size={32} />

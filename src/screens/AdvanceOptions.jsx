@@ -13,6 +13,7 @@ function formatPkr(amount) {
 
 export default function AdvanceOptions({
   onContinue,
+  onBack,
   onClose,
   initialTier = 10000,
   initialModal = null,
@@ -26,7 +27,7 @@ export default function AdvanceOptions({
 
   return (
     <div className="flex flex-col h-full bg-[var(--color-bg-app)]">
-      <AppBar onClose={onClose} title="Choose amount" />
+      <AppBar onBack={onBack} onClose={onClose} title="Choose amount" />
 
       <main className="flex-1 overflow-y-auto p-4 pb-6">
         <Card variant="default" padding="l" className="space-y-5">
