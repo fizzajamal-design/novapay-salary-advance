@@ -3,11 +3,107 @@
 @tailwind utilities;
 
 :root {
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: #1a1a1a;
+  font-family: Inter, system-ui, sans-serif;
+
+  /* Tier 1 — Reference */
+  --ref-white: #ffffff;
+  --ref-black: #000000;
+
+  --ref-blue-98: #f5f7ff;
+  --ref-blue-90: #e0e7ff;
+  --ref-blue-60: #4f46e5;
+  --ref-blue-50: #4338ca;
+  --ref-blue-10: #1e1b4b;
+
+  --ref-neutral-98: #f9fafb;
+  --ref-neutral-95: #f3f4f6;
+  --ref-neutral-90: #e5e7eb;
+  --ref-neutral-70: #9ca3af;
+  --ref-neutral-50: #6b7280;
+  --ref-neutral-20: #1f2937;
+  --ref-neutral-10: #111827;
+
+  --ref-success-95: #ecfdf5;
+  --ref-success-50: #10b981;
+  --ref-success-20: #064e3b;
+
+  --ref-danger-95: #fef2f2;
+  --ref-danger-50: #ef4444;
+  --ref-danger-20: #7f1d1d;
+
+  --ref-warning-95: #fffbeb;
+  --ref-warning-50: #f59e0b;
+  --ref-warning-20: #78350f;
+
+  /* Tier 2 — Brand */
+  --brand-primary: var(--ref-blue-60);
+  --brand-primary-hover: var(--ref-blue-50);
+  --brand-surface: var(--ref-blue-98);
+  --brand-surface-highlight: var(--ref-blue-90);
+
+  --brand-neutral-bg: var(--ref-neutral-98);
+  --brand-neutral-card: var(--ref-white);
+  --brand-neutral-text-main: var(--ref-neutral-20);
+  --brand-neutral-text-subtle: var(--ref-neutral-50);
+  --brand-neutral-border: var(--ref-neutral-90);
+
+  --brand-danger-main: var(--ref-danger-50);
+  --brand-danger-surface: var(--ref-danger-95);
+  --brand-success-main: var(--ref-success-50);
+  --brand-success-surface: var(--ref-success-95);
+
+  /* Tier 3 — Semantic */
+  --color-bg-app: var(--brand-neutral-bg);
+  --color-bg-surface: var(--brand-neutral-card);
+  --color-bg-surface-subtle: var(--ref-neutral-95);
+  --color-bg-brand-filled: var(--brand-primary);
+  --color-bg-brand-surface: var(--brand-surface);
+  --color-bg-danger-surface: var(--brand-danger-surface);
+  --color-bg-success-surface: var(--brand-success-surface);
+  --color-bg-scrim: rgb(17 24 39 / 0.4);
+  --color-border-neutral-primary: var(--brand-neutral-border);
+  --color-border-brand-default: var(--brand-primary);
+  --color-text-primary: var(--brand-neutral-text-main);
+  --color-text-secondary: var(--brand-neutral-text-subtle);
+  --color-text-brand: var(--brand-primary);
+  --color-text-danger: var(--brand-danger-main);
+  --color-text-danger-surface: var(--brand-danger-main);
+  --color-text-success: var(--brand-success-main);
+  --color-text-success-surface: var(--brand-success-main);
+  --color-text-on-brand: var(--ref-white);
+  --color-text-inverse: var(--ref-white);
+
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-bottom-sheet: 0 -4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
 }
 
 body {
   margin: 0;
-  background: #e9eaee; /* page behind the phone frame */
+  background: #e9eaee;
+  color: var(--color-text-primary);
+}
+
+.illustration-knockout {
+  mix-blend-mode: screen;
 }

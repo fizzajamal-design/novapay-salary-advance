@@ -1,41 +1,66 @@
 /**
- * Button — NovaKit Lite
- * Variants: primary | secondary
- * Sizes: md | lg
- * States: default, pressed (active), disabled
+ * Button — NovaKit / DESIGN.md
+ * Variants: primary | secondary | ghost | danger | link
+ * Sizes: m | l (md | lg aliases)
  */
+function Spinner({ className = "" }) {
+  return (
+    <span
+      className={`inline-block h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin ${className}`}
+      aria-hidden="true"
+    />
+  );
+}
+
 export default function Button({
   children,
   variant = "primary",
-  size = "md",
+  size = "m",
   disabled = false,
+  loading = false,
   onClick,
   type = "button",
   className = "",
+  icon = null,
+  iconPosition = "right",
 }) {
-  const base =
-    "inline-flex items-center justify-center rounded-md font-semibold transition-colors select-none w-full";
+  const isLink = variant === "link";
+  const resolvedSize = size === "lg" ? "l" : size === "md" ? "m" : size;
+  const isDisabled = disabled || loading;
+
+  const base = isLink
+    ? "inline-flex items-center justify-center gap-1 rounded-[var(--radius-s)] font-semibold select-none min-h-11 px-1 py-2"
+    : "inline-flex items-center justify-center gap-2 rounded-[var(--radius-m)] font-semibold select-none w-full active:scale-[0.98]";
 
   const sizes = {
-    md: "h-11 px-4 text-body",
-    lg: "h-14 px-5 text-title",
+    m: isLink ? "text-[16px] leading-[1.5]" : "h-11 px-4 text-[16px] leading-[1.5] font-medium",
+    l: isLink ? "text-[16px] leading-[1.5]" : "h-[52px] px-5 text-[16px] leading-[1.5] font-medium",
   };
 
   const variants = {
     primary:
-      "bg-brand text-white active:bg-brand-pressed disabled:bg-neutral-300 disabled:text-neutral-500",
+      "bg-[var(--color-bg-brand-filled)] text-[var(--color-text-on-brand)] active:bg-[var(--brand-primary-hover)] disabled:opacity-40 disabled:cursor-not-allowed",
     secondary:
-      "bg-white text-neutral-500 border border-neutral-300 active:bg-neutral-100 disabled:text-neutral-300",
+      "bg-[var(--color-bg-surface)] text-[var(--color-text-brand)] border border-[var(--color-border-brand-default)] active:bg-[var(--color-bg-brand-surface)] disabled:opacity-40 disabled:border-[var(--color-border-neutral-primary)] disabled:cursor-not-allowed",
+    ghost:
+      "bg-transparent text-[var(--color-text-brand)] disabled:opacity-40 disabled:cursor-not-allowed",
+    danger:
+      "bg-[var(--color-text-danger)] text-[var(--color-text-on-brand)] disabled:opacity-40 disabled:cursor-not-allowed",
+    link:
+      "bg-transparent text-[var(--color-text-brand)] underline-offset-2 hover:underline focus:underline active:text-[var(--brand-primary-hover)] disabled:text-[var(--color-text-secondary)] disabled:no-underline disabled:cursor-not-allowed",
   };
 
   return (
     <button
       type={type}
-      disabled={disabled}
+      disabled={isDisabled}
       onClick={onClick}
-      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
+      className={`${base} ${sizes[resolvedSize] || sizes.m} ${variants[variant]} ${className}`}
     >
+      {loading ? <Spinner /> : null}
+      {!loading && icon && iconPosition === "left" ? icon : null}
       {children}
+      {!loading && icon && iconPosition === "right" ? icon : null}
     </button>
   );
 }
